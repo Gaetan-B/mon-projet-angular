@@ -9,12 +9,15 @@ import {AppareilService} from "./services/appareil.services";
 import { AuthComponent } from './auth/auth.component';
 import { AppareilViewComponent } from './appareil-view/appareil-view.component';
 import {RouterModule, Routes} from "@angular/router";
+import {AuthService} from "./services/auth.service";
+import { SingleAppareilComponent } from './single-appareil/single-appareil.component';
 
-const appRoutes: Routes[
+const appRoutes: Routes = [
   { path: 'appareils', component: AppareilViewComponent },
+  { path: 'appareils/:id', component: SingleAppareilComponent },
   { path: 'auth', component: AuthComponent },
-  { path: '', component: AppareilViewComponent}
-  ];
+  { path: '', component: AppareilViewComponent }
+]
 
 @NgModule({
   declarations: [
@@ -22,7 +25,9 @@ const appRoutes: Routes[
     MonPremierComponent,
     AppareilComponent,
     AuthComponent,
-    AppareilViewComponent
+    AppareilViewComponent,
+    AppareilViewComponent,
+    SingleAppareilComponent
   ],
   imports: [
     BrowserModule,
@@ -30,7 +35,8 @@ const appRoutes: Routes[
     RouterModule.forRoot(appRoutes)
   ],
   providers: [
-    AppareilService
+    AppareilService,
+    AuthService
   ],
   bootstrap: [AppComponent]
 })

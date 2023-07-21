@@ -1,5 +1,4 @@
 import {Component, OnInit} from '@angular/core';
-import {AppareilService} from "./services/appareil.services";
 
 @Component({
   selector: 'app-root',
@@ -11,5 +10,4 @@ constructor() {
 }
 
 }
-
 
