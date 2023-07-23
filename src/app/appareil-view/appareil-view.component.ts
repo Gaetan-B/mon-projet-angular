@@ -48,4 +48,12 @@ export class AppareilViewComponent {
   onEteindre() {
     this.appareilService.switchOffAll();
   }
+
+  onSave() {
+    this.appareilService.saveAppareilToServer();
+  }
+
+  onFetch() {
+    this.appareilService.getAppareilFromServer();
+  }
 }
