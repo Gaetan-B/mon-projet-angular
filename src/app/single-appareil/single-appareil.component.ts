@@ -9,8 +9,8 @@ import {ActivatedRoute} from "@angular/router";
 })
 export class SingleAppareilComponent implements OnInit{
 
-  name: string = 'Appareil';
-  status: string = 'Status';
+  name?: string = 'Appareil';
+  status?: string = 'Status';
 
   constructor(private appareilService: AppareilService, private route: ActivatedRoute) {
   }
@@ -19,7 +19,7 @@ export class SingleAppareilComponent implements OnInit{
     const id = this.route.snapshot.params['id'];
     if (this.status && this.name && id) {
       this.name = this?.appareilService?.getAppareilByID(+id)?.name;
-      this.status = this.appareilService.getAppareilByID(+id).status;
+      this.status = this?.appareilService?.getAppareilByID(+id)?.status;
       }
     else {
       console.log("error");
